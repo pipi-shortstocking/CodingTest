@@ -9,4 +9,4 @@ arr = list(map(int, input().split()))
 # 찾을 숫자 입력
 v = int(input())
 
-print(arr.count(v))
+print(arr.count(v))  # count 함수가 있다는 사실 잊지 말기
