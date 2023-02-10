@@ -1,5 +1,6 @@
 n = int(input())
-plans = input().split()  # 글자를 입력받아야 함
+# plans = input().split()
+plans = list(map(str, input().split()))
 
 # 공간의 크기 지정
 x = n
