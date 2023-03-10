@@ -17,7 +17,7 @@ for i in range(max(length)):
     for j in range(5):
         if i < length[j]:
             word.append(arr[j][i])
-        # word[i] += arr[j][i]
+            #word[i] += arr[j][i]
 
 for i in word:
     print(i, end='')
