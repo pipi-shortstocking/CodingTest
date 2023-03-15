@@ -3,8 +3,9 @@ arr = []
 result = 0
 
 for i in range(n):
-    line = list(map(int, input()))
-    arr.append(line)
+    # line = list(map(int, input()))
+    # arr.append(line)
+    arr.append(list(map(int, input())))
 
 
 def dfs(x, y):
