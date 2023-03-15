@@ -1,3 +1,5 @@
+# dfs는 모든 경우의 수를 찾을 경우에 사용되는 느낌
+
 n, m = map(int, input().split())
 arr = []
 result = 0
