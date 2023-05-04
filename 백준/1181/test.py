@@ -10,7 +10,13 @@ for _ in range(n):
 arr_sort = set(arr)  # 중복제거
 arr = list(arr_sort)
 arr.sort()
-arr.sort(key=len)
+
+for i in range(len(arr)):
+    for j in range(i, 0, -1):
+        if len(arr[j]) < len(arr[j-1]):
+            arr[j], arr[j-1] = arr[j-1], arr[j]
+        else:
+            break
 
 for i in range(len(arr)):
     print(arr[i])
