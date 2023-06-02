@@ -8,7 +8,7 @@ n = int(input())
 for _ in range(n):
     arr.append(str(input().rstrip()))
 
-arr.sort()  # 알파벳 순서
+arr.sort()  # 알파벳 순서로 정렬
 
 for i in range(n):
     min_index = i
