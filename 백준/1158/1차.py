@@ -18,5 +18,4 @@ for i in range(n):
     # print(result)
     # print(arr)
 
-print(result)
 print("<", ", ".join(result), ">", sep="")  # 구분자.join(리스트)
