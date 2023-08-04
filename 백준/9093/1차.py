@@ -23,7 +23,7 @@ for _ in range(t):
 
             word = ""
             start = i + 1
-    answer = answer[: len(answer) - 1]
+    # answer = answer[: len(answer) - 1] 굳이 필요 없음을 확인함
     print(answer)
     # print(list(answer))
 
