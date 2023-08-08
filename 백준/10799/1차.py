@@ -1,13 +1,24 @@
 import sys
+
 input = sys.stdin.readline
 
-raser = str(input().rstrip())
-pointer_loc = []
+line = str(input().rstrip())
+stack = []
+result = 0
 
-for i in range(len(raser)):
-    # 포인터 위치 저장
-    if raser[i] == '(' and raser[i+1] == ')':
-        pointer_loc.append([i,i+1])
-    
-    elif raser[i] == '(':
-        
+# 여는 괄호를 만나면 push
+# 닫는 괄호를 만나면 pop
+# 바로 이전에 여는 괄호가 있는 레이저라면 -> +stack 사이즈
+# 파이프의 끝이라면 -> +1
+
+for i in range(len(line)):
+    if line[i] == "(":
+        stack.append("(")
+    elif line[i] == ")":
+        stack.pop()
+        if line[i - 1] == "(":
+            result += len(stack)
+        else:
+            result += 1
+
+print(result)
