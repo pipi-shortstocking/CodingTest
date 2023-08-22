@@ -1,7 +1,9 @@
-# x % n = (x % n) % n
-# (a + b) % n = (a % n + b % n) % n
-# (a * b) % n = (a % n * b % n)
+import sys
+input = sys.stdin.readline()
 
-# 1 % 7 = 1
-# 11 % 7 = (1 * 10 + 1) % 7 = (1 % 7 * 10 + 1) % 7 = (1 * 10 + 1) % 7 = 4
-# 111 % 7 = (11 * 10 + 1) % 7 = (4 * )
+while True:
+    try:
+        n = int(input())
+    except:
+        break
+    print(n)
