@@ -1,6 +1,3 @@
-# 배열에 저장해두고
-# 작은 것부터 n, n-1, n-2 ... 곱해서 가장 큰 값 출력
-
 import sys
 input = sys.stdin.readline
 
@@ -12,6 +9,7 @@ result = []
 
 for i in range(N):
     rope.append(int(input()))
+rope.sort()
 
 for i in range(N):
     result.append(cnt[i]*rope[i])
