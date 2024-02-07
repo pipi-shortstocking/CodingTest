@@ -10,7 +10,7 @@ def divisor(n) :
             result.append(i)
             if i < (n//i):
                 result.append(n//i)
-    result.sort();
+    result.sort()
     
     return result
 
