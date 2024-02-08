@@ -20,3 +20,5 @@ t = int(input())
 for _ in range(t):
     n = int(input())
     print(sum[n])
+
+# pypy3으로만 통과
