@@ -13,8 +13,8 @@ for spot in a:
     if dis != 0:
         d.append(abs(dis))
 
-d = set(d)
-d = list(d)
+# d = set(d)
+# d = list(d) # 따로 처리를 안하는 것이 더 빠름
 gcd = 0
 
 for i in range(len(d)):
