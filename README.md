@@ -6,3 +6,4 @@
 - 다시 풀어봐야 할 문제 list
   - 백준 2493 (https://www.acmicpc.net/problem/2493)
   - 백준 5430 (https://www.acmicpc.net/problem/5430)
+  - 백준 2504 (https://www.acmicpc.net/problem/2504)
