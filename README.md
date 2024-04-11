@@ -9,3 +9,4 @@
   - 백준 2504 (https://www.acmicpc.net/problem/2504)
   - 백준 1926 (https://www.acmicpc.net/problem/1926)
   - 백준 7569 (https://www.acmicpc.net/problem/7569)
+  - 백준 7562 (https://www.acmicpc.net/problem/7562)
