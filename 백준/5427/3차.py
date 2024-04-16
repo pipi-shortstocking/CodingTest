@@ -8,7 +8,7 @@ for _ in range(t):
     via_s = [[-1 for _ in range(w)] for _ in range(h)]
     f_queue = deque()
     s_queue = deque()
-    flag = 0
+    flag = False
 
     for i in range(h):
         temp = list(map(str, input()))
@@ -47,14 +47,21 @@ for _ in range(t):
             if nx < 0 or ny < 0 or nx >= h or ny >= w:
                 # print(via_s[x][y] + 1)
                 # exit()  # 무조건 프로그램이 끝남
-                flag = 1
+                flag = True
+                # print(x,y, ",", nx,ny)
+                ans = via_s[x][y] + 1
+                s_queue = deque() # 큐 초기화
                 continue
-            if via_s[nx][ny] == -1 and board[nx][ny] != "#" and board[nx][ny] != "*":
+            # if via_s[nx][ny] == -1 and board[nx][ny] != "#" and board[nx][ny] != "*":
+            if via_s[nx][ny] == -1 and board[nx][ny] == ".":
                 if via_f[nx][ny] == -1 or via_s[x][y] + 1 < via_f[nx][ny]:
                     via_s[nx][ny] = via_s[x][y] + 1
                     s_queue.append((nx, ny))
 
-    if flag == 1:
-        print(via_s[x][y] + 1)
+    if flag:
+        print(ans)
     else:
         print("IMPOSSIBLE")
+
+    # print(via_f)
+    # print(via_s)

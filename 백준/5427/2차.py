@@ -48,13 +48,19 @@ for _ in range(t):
                 # print(via_s[x][y] + 1)
                 # exit()  # 무조건 프로그램이 끝남
                 flag = 1
+                # print(x,y, ",", nx,ny)
+                ans = via_s[x][y] + 1
                 continue
-            if via_s[nx][ny] == -1 and board[nx][ny] != "#" and board[nx][ny] != "*":
+            # if via_s[nx][ny] == -1 and board[nx][ny] != "#" and board[nx][ny] != "*":
+            if via_s[nx][ny] == -1 and board[nx][ny] == ".":
                 if via_f[nx][ny] == -1 or via_s[x][y] + 1 < via_f[nx][ny]:
                     via_s[nx][ny] = via_s[x][y] + 1
                     s_queue.append((nx, ny))
 
     if flag == 1:
-        print(via_s[x][y] + 1)
+        print(ans)
     else:
         print("IMPOSSIBLE")
+
+    # print(via_f)
+    # print(via_s)
