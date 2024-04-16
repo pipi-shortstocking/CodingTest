@@ -1,65 +1,55 @@
 from collections import deque
 
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1]
-
-
-def burn():
-    for _ in range(len(f_queue)):
-        x, y = f_queue.popleft()
-        for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-
-            if 0 <= nx <= h and 0 <= ny <= w:
-                if board[nx][ny] != "#" and board[nx][ny] != "*":
-                    board[nx][ny] = "*"
-                    f_queue.append((nx, ny))
-
-
-def move():
-    isgo = False
-    for _ in range(len(s_queue)):
-        x, y = s_queue.popleft()
-        for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-
-            if 0 <= nx <= h and 0 <= ny <= w:
-                if via[nx][ny] == 0 and board[nx][ny] != "#" and board[nx][ny] != "*":
-                    isgo = True
-                    via[nx][ny] = via[x][y] + 1
-                    s_queue.append((nx, ny))
-            else:
-                return via[nx][ny]
-    if not isgo:
-        return "IMPOSSIBLE"
-
-
 t = int(input())
 for _ in range(t):
     w, h = map(int, input().split())
     board = []
-    via = [[0 for _ in range(w)] for _ in range(h)]
+    via_f = [[-1 for _ in range(w)] for _ in range(h)]
+    via_s = [[-1 for _ in range(w)] for _ in range(h)]
     f_queue = deque()
     s_queue = deque()
 
     for i in range(h):
-        board.append(list(map(str, input().rstrip().split())))
+        temp = list(map(str, input()))
         for j in range(w):
-            if board[i][j] == "@":  # 시작 위치
+            if temp[j] == "@":  # 상근 위치
                 s_queue.append((i, j))
-            if board[i][j] == "*":  # 불 위치
+                via_s[i][j] = 0
+            if temp[j] == "*":  # 불 위치
                 f_queue.append((i, j))
+                via_f[i][j] = 0
+        board.append(temp)
 
-    via[s_queue[0][0]][s_queue[0][1]] = 1
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, -1, 1]
 
-    result = 0
-    while True:
-        burn()
-        result = move()
+    # 불
+    while f_queue:
+        x, y = f_queue.popleft()
 
-        if result:
-            break
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
 
-    print(result)
+            if 0 <= nx < h and 0 <= ny < w:
+                if via_f[nx][ny] == -1 and board[nx][ny] != "#":
+                    via_f[nx][ny] = via_f[x][y] + 1
+                    f_queue.append((nx, ny))
+
+    while s_queue:
+        x, y = s_queue.popleft()
+
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+
+            if nx < 0 or ny < 0 or nx >= h or ny >= w:
+                print(via_s[x][y] + 1)
+                # exit()  # 무조건 프로그램이 끝남
+                continue
+            if via_s[nx][ny] == -1 and board[nx][ny] != "#" and board[nx][ny] != "*":
+                if via_f[nx][ny] == -1 or via_s[nx][ny] + 1 < via_f[nx][ny]:
+                    via_s[nx][ny] = via_s[x][y] + 1
+                    s_queue.append((nx, ny))
+    # else:
+    #     print("IMPOSSIBLE")
