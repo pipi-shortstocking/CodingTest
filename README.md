@@ -11,3 +11,4 @@
   - 백준 7569 (https://www.acmicpc.net/problem/7569)
   - 백준 7562 (https://www.acmicpc.net/problem/7562)
   - 백준 4179 (https://www.acmicpc.net/problem/4179)
+  - 백준 5427 (https://www.acmicpc.net/problem/5427)
