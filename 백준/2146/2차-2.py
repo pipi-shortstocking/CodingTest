@@ -15,6 +15,7 @@ def marking(i, j, mark):
     queue.append((i, j))
     arr[i][j] = mark
     visited[i][j] = True
+
     while queue:
         x, y = queue.popleft()
         for k in range(4):
@@ -38,14 +39,14 @@ for i in range(n):
             mark += 1
 
 
-def getDist(i, j, now):  # now는 현재 위치값
+def getDist(i, j, now):  # now는 섬의 번호
     queue = deque()
     queue.append((i, j, 0))
 
     while queue:
         x, y, cnt = queue.popleft()
 
-        if arr[x][y] != 0 and arr[x][y] != now:
+        if arr[x][y] != 0 and arr[x][y] != now: # 바다가 아니고, 시작 섬이 아닐 때 -> 다른 섬
             return cnt
 
         for k in range(4):
@@ -53,7 +54,7 @@ def getDist(i, j, now):  # now는 현재 위치값
             ny = y + dy[k]
 
             if 0 <= nx < n and 0 <= ny < n:
-                if arr[nx][ny] != now:
+                if arr[nx][ny] != now: # 시작 섬이 아닐 때 (바다일 수도 있음)
                     visited[nx][ny] = True
                     queue.append((nx, ny, cnt + 1))
     return 2000
@@ -66,3 +67,5 @@ for i in range(n):
         if arr[i][j] != 0:  # 바다일 경우
             visited = [[False] * n for _ in range(n)]
             ans = min(ans, getDist(i, j, arr[i][j]))  # 최솟값 갱신
+
+print(ans-1)

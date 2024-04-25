@@ -1,3 +1,5 @@
+# 구글링
+
 from collections import deque
 
 n = int(input())
