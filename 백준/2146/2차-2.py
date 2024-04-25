@@ -64,7 +64,7 @@ def getDist(i, j, now):  # now는 섬의 번호
 ans = 2000
 for i in range(n):
     for j in range(n):
-        if arr[i][j] != 0:  # 바다일 경우
+        if arr[i][j] != 0:  # 섬일 경우
             visited = [[False] * n for _ in range(n)]
             ans = min(ans, getDist(i, j, arr[i][j]))  # 최솟값 갱신
 
