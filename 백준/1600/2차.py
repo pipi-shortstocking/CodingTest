@@ -1,9 +1,9 @@
 from collections import deque
 
-dx = [0, 0, 1, -1]
-dy = [1, -1, 0, 0]
 h_dx = [-2, -2, -1, -1, 1, 1, 2, 2]
-h_dy = [1, -1, 2, -2, 2, -2, 1, -1]
+h_dy = [-1, 1, -2, 2, -2, 2, -1, 1]
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
 
 k = int(input())
 w, h = map(int, input().split())
