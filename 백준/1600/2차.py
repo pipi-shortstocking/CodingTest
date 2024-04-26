@@ -27,12 +27,7 @@ while queue:
         nx = x + dx[i]
         ny = y + dy[i]
 
-        if 0 <= nx < h and 0 <= ny < w:
-            if via[nx][ny][cnt] == 0 and arr[nx][ny] == 0:
-                via[nx][ny][cnt] = via[x][y][cnt] + 1
-                queue.append((nx, ny, cnt))
-
-    if cnt < k:
+    if cnt < k:  # 말의 움직임을 먼저 수행했을 때 시간복잡도가 크게 줄어듦
         for i in range(8):
             nx = x + h_dx[i]
             ny = y + h_dy[i]
@@ -41,6 +36,11 @@ while queue:
                 if via[nx][ny][cnt + 1] == 0 and arr[nx][ny] == 0:
                     via[nx][ny][cnt + 1] = via[x][y][cnt] + 1
                     queue.append((nx, ny, cnt + 1))
+
+        if 0 <= nx < h and 0 <= ny < w:
+            if via[nx][ny][cnt] == 0 and arr[nx][ny] == 0:
+                via[nx][ny][cnt] = via[x][y][cnt] + 1
+                queue.append((nx, ny, cnt))
 
 if via[h - 1][w - 1].count(0) == k + 1:
     print(-1)
