@@ -11,19 +11,24 @@ def cut(paper, side):
     check = paper[0][0]
     flag = True
     i = 0
-    # temp = []
-    while flag and i < n:
+    while flag and i < side:
         if paper[i].count(check) != side:  # 모두 같은 수가 아닐 때
             flag = False
-            # for j in range(0, n, side // 3):
-            #     # cut(paper, side)  # 수정 (9개로 나눈 배열, 사각형 한 변의 길이)
-            #     print(j, j + side // 3)
-            #     print(paper[i][j : j + side // 3])
         i += 1
 
     if flag:
         ans[check + 1] += 1
+    else:
+        # 9등분
+        temp = []
+        if side > 2:
+            for i in range(0, n, side // 3):
+                for j in range(side):
+                    temp.append(paper[j][i : i + side // 3])
+                    if j % 3 == 2:
+                        cut(temp, side // 3)
+                        temp = []
 
 
 cut(arr, n)
-# print(ans)
+print(ans)
