@@ -18,3 +18,4 @@
   - 백준 1600 (https://www.acmicpc.net/problem/1600)
   - 백준 1780 (https://www.acmicpc.net/problem/1780)
   - 백준 1992 (https://www.acmicpc.net/problem/1992)
+  - 백준 2447 (https://www.acmicpc.net/problem/2447)
