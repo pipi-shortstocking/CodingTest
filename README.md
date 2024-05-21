@@ -19,3 +19,4 @@
   - 백준 1780 (https://www.acmicpc.net/problem/1780)
   - 백준 1992 (https://www.acmicpc.net/problem/1992)
   - 백준 2447 (https://www.acmicpc.net/problem/2447)
+  - 백준 2448 (https://www.acmicpc.net/problem/2448)
