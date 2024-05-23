@@ -4,7 +4,7 @@
 ++ 백준 문제 역시 포함됨
 
 - 다시 풀어봐야 할 문제 list
-  - 백준 2493 (https://www.acmicpc.net/problem/2493)
+  - 스택 응용 문제
   - 백준 5430 (https://www.acmicpc.net/problem/5430)
   - 백준 2504 (https://www.acmicpc.net/problem/2504)
   - 백준 1926 (https://www.acmicpc.net/problem/1926)
