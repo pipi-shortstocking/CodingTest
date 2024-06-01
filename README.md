@@ -5,7 +5,6 @@
 
 - 다시 풀어봐야 할 문제 list
   - 스택 응용 문제
-  - 백준 5430 (https://www.acmicpc.net/problem/5430)
   - 백준 2504 (https://www.acmicpc.net/problem/2504)
   - 백준 1926 (https://www.acmicpc.net/problem/1926)
   - 백준 7569 (https://www.acmicpc.net/problem/7569)
