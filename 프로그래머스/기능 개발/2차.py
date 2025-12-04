@@ -8,6 +8,9 @@ def solution(progresses, speeds):
 
     for i in range(length):
         days.append(math.ceil(extra[i] / speeds[i]))
+
+    # 위 계산 과정을 한 줄로 설정 가능
+    # days = [math.ceil((100 - p) / s) for p, s in zip (progresses, speeds)]
     
     answer = []
     n = 1
