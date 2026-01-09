@@ -12,7 +12,7 @@ def solution(board, moves):
                 # print("move = ", move)
                 # print("doll = ", doll)
 
-                if len(stack) != 0 and stack[-1] == doll:
+                if len(stack) != 0 and stack[-1] == doll: # if stack and stack[-1] == doll 로 작성 가능
                     stack.pop()
                     cnt += 2
                 else:
