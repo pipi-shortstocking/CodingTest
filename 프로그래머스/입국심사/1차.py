@@ -20,7 +20,7 @@ def solution(n, times):
         else:
             start = mid + 1
 
-    return start
+    return start # start가 end + 1값이 되면 최초로 가능한 시간 도출
 
 n = 6
 times = [7, 10]
