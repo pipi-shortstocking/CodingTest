@@ -9,7 +9,7 @@ def dfs_recursion(graph, node, visited):
             dfs_recursion(graph, i, visited)
 
 ## 스택형
-def dfs_stack(start):
+def dfs_stack(start, graph, N):
     visited = [False] * (N + 1) # 방문 여부 리스트
     stack = [start] # 시작 노드를 스택에 넣기
 
