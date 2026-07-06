@@ -18,9 +18,9 @@ for i in range(2, int(math.sqrt(n)) + 1):
 ## fast ver.
 n = 1000000
 arr = [True] * (n + 1)
+arr[0] = arr[1] = False
 
 for i in range(2, int(n**0.5) + 1):
     if arr[i]:
         for j in range(i * 2, n, i):
-            if arr[i]:
-                arr[j] = False
+            arr[j] = False
