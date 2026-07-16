@@ -22,7 +22,7 @@ def solution(distance, rocks, n):
         if cnt > n: # n 이상으로 바위를 제거했으면 간격 줄이기
             right = mid - 1
         else:
-            answer = left
+            answer = mid
             left = mid + 1
     
     return answer
