@@ -34,15 +34,15 @@ def bfs_grid(start_x, start_y, graph):
             nx = x + dx[i]
             ny = y + dy[i]
 
-        # 범위 벗어나면 무시
-        if nx < 0 or nx >= n or ny < 0 or ny >= m:
-            continue
-        # 이미 방문했으면 무시
-        if visited[nx][ny]:
-            continue
-        # 벽이면 무시 (0이 벽인 경우)
-        if graph[nx][ny] == 0:
-            continue
+            # 범위 벗어나면 무시
+            if nx < 0 or nx >= n or ny < 0 or ny >= m:
+                continue
+            # 이미 방문했으면 무시
+            if visited[nx][ny]:
+                continue
+            # 벽이면 무시 (0이 벽인 경우)
+            if graph[nx][ny] == 0:
+                continue
 
-        visited[nx][ny] = True
-        queue.append((nx, ny))
+            visited[nx][ny] = True
+            queue.append((nx, ny))
